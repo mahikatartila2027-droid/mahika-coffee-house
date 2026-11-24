@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mahika's Coffee House</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- CUSTOM CSS MODIFICATIONS -->
+    <style>
+
+        /* Main content spacing */
+        #body .featured {
+            padding: 25px;
+        }
+
+        /* Main coffee picture */
+        #body .featured > img:first-child {
+            display: block !important;
+            float: none !important;
+            width: 100%;
+            max-width: 900px;
+            height: auto !important;
+            margin: 0 auto 30px;
+        }
+
+        /* Keep all text below pictures */
+        #body .featured h2,
+        #body .featured p {
+            clear: both;
+            position: relative;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        #body .featured h2 {
+            color: #78394e;
+            font-family: Georgia, serif;
+        }
+
+        /* Coffee picture gallery */
+        #body .featured > ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+        }
+
+        #body .featured > ul li {
+            float: none !important;
+            margin: 0 !important;
+            padding: 0;
+        }
+
+        #body .featured > ul li img {
+            display: block !important;
+            float: none !important;
+            width: 220px;
+            max-width: 100%;
+            height: 160px !important;
+            object-fit: cover;
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+
+        /* Coffee recommendation box */
+        .coffee-recommendation {
+            background: #f8e8ed;
+            border: 2px solid #78394e;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 35px auto;
+            text-align: center;
+            max-width: 650px;
+        }
+
+        .coffee-recommendation h2 {
+            color: #78394e;
+        }
+
+        .coffee-recommendation input,
+        .coffee-recommendation select {
+            padding: 12px;
+            margin: 10px;
+            border: 1px solid #78394e;
+            border-radius: 5px;
+        }
+
+        .coffee-recommendation button {
+            background: #78394e;
+            color: white;
+            padding: 12px 22px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .coffee-recommendation button:hover {
+            background: #a45b72;
+        }
+
+        #coffeeResult {
+            color: #78394e;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        /* Original template link */
+        .template-link {
+            text-align: center;
+            margin: 30px auto;
+            padding: 15px;
+        }
+
+        .template-link a {
+            color: #78394e;
+            font-weight: bold;
+        }
+
+        /* Student information highlight */
+        .student-details {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .student-details p {
+            display: inline-block;
+            background-color: #78394e;
+            color: white !important;
+            font-weight: bold;
+            padding: 10px 16px;
+            border-radius: 6px;
+            margin: 5px;
+            line-height: 1.5;
+        }
+
+        /* Smaller screens */
+        @media screen and (max-width: 600px) {
+            #body .featured {
+                padding: 12px;
+            }
+
+            #body .featured > ul li img {
+                width: 100%;
+                max-width: 280px;
+                height: auto !important;
+            }
+
+            .coffee-recommendation {
+                padding: 15px;
+            }
+
+            .student-details p {
+                display: block;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header">
+    <div>
+
+        <a href="index.html" style="text-decoration:none;">
+            <h1 style="color:white; font-family:Georgia; font-size:32px; margin:20px 0;">
+                Mahika's Coffee House
+            </h1>
+        </a>
+
+        <a href="index.html">
+            <img src="images/waitress.png" alt="Coffee House">
+        </a>
+
+        <ul class="navigation">
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="burger.html">Our Coffee</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+
+    </div>
+</div>
+
+<!-- MAIN BODY -->
+<div id="body">
+
+    <div class="featured">
+
+        <!-- MAIN COFFEE PICTURE -->
+        <img src="images/newcoffee4.jpg"
+             alt="Welcome to Mahika's Coffee House">
+
+        <!-- WELCOME MESSAGE -->
+        <h2 id="welcomeMessage">
+            Welcome to Mahika's Coffee House!
+        </h2>
+
+        <p>
+            Where Every Cup Brings a Little Happiness!
+        </p>
+
+        <p>
+            Welcome to Mahika's Coffee House, a cozy place for coffee lovers.
+            We serve freshly brewed coffee made with carefully selected coffee beans.
+            Whether you want to relax, study, or spend time with friends,
+            we are happy to welcome you. Enjoy delicious coffee and happy moments with us!
+        </p>
+
+        <!-- COFFEE PHOTO GALLERY -->
+        <ul>
+            <li>
+                <img src="images/newcoffee1.jpg" alt="Fresh Coffee">
+            </li>
+
+            <li>
+                <img src="images/newcoffee2.jpg" alt="Coffee">
+            </li>
+
+            <li>
+                <img src="images/newcoffee3.jpg" alt="Coffee Time">
+            </li>
+        </ul>
+
+        <!-- COFFEE RECOMMENDATION -->
+        <div class="coffee-recommendation">
+
+            <h2>Find Your Perfect Coffee!</h2>
+
+            <p>
+                Tell us your name and choose your favorite coffee.
+                We will recommend something delicious!
+            </p>
+
+            <input type="text"
+                   id="customerName"
+                   placeholder="Enter your name">
+
+            <br>
+
+            <select id="coffeeChoice">
+                <option value="latte">Latte</option>
+                <option value="cappuccino">Cappuccino</option>
+                <option value="espresso">Espresso</option>
+                <option value="americano">Americano</option>
+            </select>
+
+            <br>
+
+            <button onclick="recommendCoffee()">
+                Get My Recommendation
+            </button>
+
+            <p id="coffeeResult"></p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ORIGINAL TEMPLATE LINK -->
+<div class="template-link">
+
+    <p>
+        Original Website Template:
+        <a href="https://freewebsitetemplates.com/preview/retrodiner/index.html"
+           target="_blank">
+            Retro Diner by Free Website Templates
+        </a>
+    </p>
+
+</div>
+
+<!-- FOOTER -->
+<div id="footer">
+    <div>
+        <ul>
+
+            <li class="first">
+
+                <h2>Mahika's Coffee House</h2>
+
+                <span>Fresh Coffee, Happy Moments!</span>
+
+                <h3>Follow Us</h3>
+
+                <ul class="connect">
+                    <li><a class="facebook" href="#"></a></li>
+                    <li><a class="twitter" href="#"></a></li>
+                    <li><a class="googleplus" href="#"></a></li>
+                </ul>
+
+            </li>
+
+            <li>
+
+                <h2>Mahika's Coffee House</h2>
+
+                <ul class="navigation">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="burger.html">Our Coffee</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+
+                <span>Copyright &copy; 2026 Mahika's Coffee House</span>
+
+                <!-- HIGHLIGHTED STUDENT INFORMATION -->
+                <div class="student-details">
+
+                    <p>Student Name: TARTILA MAHIKA</p>
+
+                    <p>Student ID: 23314106</p>
+
+                </div>
+
+            </li>
+
+            <li class="last">
+
+                <h2>Contact Us</h2>
+
+                <span>Thank you for visiting our coffee house!</span>
+
+                <h3>Enjoy Your Coffee!</h3>
+
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+
+    // Automatic welcome message on homepage
+    window.onload = function() {
+
+        document.getElementById("welcomeMessage").innerHTML =
+            "Welcome to Mahika's Coffee House! Enjoy your visit!";
+
+    };
+
+
+    // Coffee recommendation function
+    function recommendCoffee() {
+
+        var name = document.getElementById("customerName").value;
+        var coffee = document.getElementById("coffeeChoice").value;
+
+        var recommendation = "";
+
+        if (name.trim() === "") {
+            name = "Coffee Lover";
+        }
+
+        if (coffee === "latte") {
+            recommendation =
+                "Latte is a smooth and creamy choice!";
+        }
+
+        else if (coffee === "cappuccino") {
+            recommendation =
+                "Cappuccino is perfect for foam lovers!";
+        }
+
+        else if (coffee === "espresso") {
+            recommendation =
+                "Espresso is a rich and strong coffee!";
+        }
+
+        else if (coffee === "americano") {
+            recommendation =
+                "Americano is a classic coffee choice!";
+        }
+
+        document.getElementById("coffeeResult").innerHTML =
+            "Hello, " + name + "! " + recommendation;
+
+    }
+
+</script>
+
+</body>
+</html>
